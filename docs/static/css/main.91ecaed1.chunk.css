@@ -3,9 +3,9 @@ html{scroll-behavior:smooth;font-size:100%}.mobile{display:block}.main{display:n
 .studio-icon{width:1.125rem;height:1.125rem}
 
 
-.studio-sortable-table tfoot nav{margin:1rem}.studio-sortable-table tfoot nav .rvt-pagination__item{display:flex;align-items:center}
+.studio-sortable-table nav{margin:1rem}.studio-sortable-table nav .rvt-pagination__item{display:flex;align-items:center}
 
 .story-table{width:95vw}
 
 
-/*# sourceMappingURL=main.402a6d93.chunk.css.map*/
+/*# sourceMappingURL=main.91ecaed1.chunk.css.map*/
