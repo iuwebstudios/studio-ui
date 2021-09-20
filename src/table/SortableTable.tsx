@@ -1,6 +1,6 @@
 import React, {ReactElement, ReactNode, useState} from "react";
 import "./assets/SortableTable.scss";
-import {Button, Pagination, Table} from "rivet-react";
+import {Button, Pagination, Section, Table} from "rivet-react";
 import {SortButton} from "../button/SortButton";
 
 
@@ -38,41 +38,43 @@ export const SortableTable: React.FC<TableProps> = (
     }
     const pageEndIndex = (): number => (page.num + 1) * page.size;
     return (
-        <Table className="studio-sortable-table">
-            <caption className="sr-only">{title}</caption>
-            <thead>
-            <tr>
-                {header.map((head, index) =>
-                    <th scope="col" key={"row-head-" + head.name}>
-                        {typeof head.name === 'string' ?
-                            <div className="sort-button">
-                                <SortButton
-                                    onClick={() => {
-                                        handleSortClicked(index)
-                                    }}
-                                    active={sort.index === index}
-                                    sortAsc={!sort.desc}>
-                                    {head.name}
-                                </SortButton>
-                            </div> : head.name
-                        }
-                    </th>
-                )}
-            </tr>
-            </thead>
-            <tbody>
-            {
-                sortRows().slice(page.num * page.size, pageEndIndex() - 1).map((cols, rowIndex) =>
-                    <tr key={"row-" + rowIndex}>{
-                        cols.map((col, colIndex) =>
-                            <td key={"row-col" + rowIndex + colIndex}>
-                                {col.content}
-                            </td>)}
-                    </tr>
-                )
-            }
-            </tbody>
-            <tfoot>
+        <Section className="studio-sortable-table">
+            <Table>
+                <caption className="sr-only">{title}</caption>
+                <thead>
+                <tr>
+                    {header.map((head, index) =>
+                        <th scope="col" key={"row-head-" + head.name}>
+                            {typeof head.name === 'string' ?
+                                <div className="sort-button">
+                                    <SortButton
+                                        onClick={() => {
+                                            handleSortClicked(index)
+                                        }}
+                                        active={sort.index === index}
+                                        sortAsc={!sort.desc}>
+                                        {head.name}
+                                    </SortButton>
+                                </div> : head.name
+                            }
+                        </th>
+                    )}
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    sortRows().slice(page.num * page.size, pageEndIndex() - 1).map((cols, rowIndex) =>
+                        <tr key={"row-" + rowIndex}>{
+                            cols.map((col, colIndex) =>
+                                <td key={"row-col" + rowIndex + colIndex}>
+                                    {col.content}
+                                </td>)}
+                        </tr>
+                    )
+                }
+                </tbody>
+
+            </Table>
             {totalPage > 1 ?
                 <Pagination>
                     <Button
@@ -100,10 +102,7 @@ export const SortableTable: React.FC<TableProps> = (
                     </div>
                 </Pagination>
                 : ""}
-
-
-            </tfoot>
-        </Table>
+        </Section>
     );
 };
 
