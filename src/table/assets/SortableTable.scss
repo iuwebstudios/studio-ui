@@ -1,0 +1,13 @@
+.studio-sortable-table {
+  tfoot {
+    nav {
+      margin: 1rem;
+
+      .rvt-pagination__item {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+  }
+}

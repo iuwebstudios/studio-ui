@@ -28,7 +28,6 @@ export const Icon: React.FC<IconProps> =
 
 export interface IconProps {
 
-
     /**
      * icon click handler
      */

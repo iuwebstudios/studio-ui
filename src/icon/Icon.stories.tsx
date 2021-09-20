@@ -8,9 +8,6 @@ import "./assets/IconStories.scss";
 export default {
     title: 'Visual/Icons',
     component: Icon,
-    argTypes: {
-        color: {control: 'color'},
-    },
 } as Meta;
 
 
