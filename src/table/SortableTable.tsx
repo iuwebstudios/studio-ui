@@ -39,12 +39,15 @@ export const SortableTable: React.FC<TableProps> = (
     const pageEndIndex = (): number => (page.num + 1) * page.size;
     return (
         <Section className="studio-sortable-table">
+            <h2><strong>{title}</strong></h2>
             <Table>
                 <caption className="sr-only">{title}</caption>
                 <thead>
                 <tr>
                     {header.map((head, index) =>
-                        <th scope="col" key={"row-head-" + head.name}>
+                        <th scope="col" key={"row-head-" + head.name}
+                            className={head.visibility ? "main" : ""}
+                        >
                             {typeof head.name === 'string' ?
                                 <div className="sort-button">
                                     <SortButton
@@ -66,7 +69,9 @@ export const SortableTable: React.FC<TableProps> = (
                     sortRows().slice(page.num * page.size, pageEndIndex() - 1).map((cols, rowIndex) =>
                         <tr key={"row-" + rowIndex}>{
                             cols.map((col, colIndex) =>
-                                <td key={"row-col" + rowIndex + colIndex}>
+                                <td key={"row-col" + rowIndex + colIndex}
+                                    className={header[colIndex].visibility ? "main" : ""}>
+                                    
                                     {col.content}
                                 </td>)}
                         </tr>
@@ -130,6 +135,7 @@ export interface Head {
     name: ReactElement | string;
     title?: string;
     sort?: (a: Col[], b: Col[]) => number;
+    visibility?: "large-screen";
 }
 
 export interface Col {

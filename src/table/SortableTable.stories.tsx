@@ -15,9 +15,9 @@ const Template: Story = () =>
             header: [
                 {name: "Id", title: "Id"},
                 {name: "Name", title: "First name and Last name"},
-                {name: "Email", title: "Email Address"},
-                {name: "Phone", title: "Phone Number"},
-                {name: "Eligibility", title: "Eligibility"},
+                {name: "Email", title: "Email Address", visibility: "large-screen"},
+                {name: "Phone", title: "Phone Number", visibility: "large-screen"},
+                {name: "Eligibility", title: "Eligibility", visibility: "large-screen"},
                 {name: <Icon name="plus"/>}
 
             ], rows: [
@@ -98,7 +98,7 @@ const PageTemplate: Story = () => {
             header: [
                 {name: "Id", title: "Id", sort: (a, b) => +a - +b},
                 {name: "Name", title: "First name and Last name"},
-                {name: "Email", title: "Email Address"},
+                {name: "Email", title: "Email Address", visibility: "large-screen"},
                 {name: "Phone", title: "Phone Number"}
 
             ], rows: rows()
