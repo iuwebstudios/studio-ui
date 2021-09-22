@@ -1,7 +1,7 @@
 $table-dark-background-color: rgba(234, 233, 227, 0.30) !default;
 .studio-sortable-table {
   h2 {
-  padding: 2rem;
+    padding: 2rem;
   }
 
   tr {
@@ -15,12 +15,6 @@ $table-dark-background-color: rgba(234, 233, 227, 0.30) !default;
 
     td {
       padding: 0 1rem;
-
-      .muncher-button {
-        text-transform: none;
-        white-space: normal;
-        text-align: left;
-      }
     }
   }
 
